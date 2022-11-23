@@ -1,0 +1,117 @@
+
+
+=>  to use any particular dependencies in react,
+    first it needs to be installed in package.json dependencies.
+
+<!-- Advantages of React -->
+    - single page application
+    - It works on the virtual DOM.
+    When react app has updated, it doesnot disturb original DOM, 
+    it changes virtual/copy of DOM later updates are placed in real DOM. 
+    - data flows in one way directon===ONE WAY BINDING
+    - react is component-based structure. 
+       Components are created in reactapp, that can be reused.
+
+
+=>  when react app is set to run script file starts ruuning in index.js
+    React DOM- virtual DOM
+    it creates root element and appends to it, that can be seen at index.html in public folder.
+    That root element consists of react application that is rendered.
+    application contains data that is pushed into this root element.
+    App is a component.
+
+=>  const root = ReactDOM.createRoot(document.getElementById('root'));
+    this means, App here is React Component, this App is rendering into the index.js inside the div root element of ReactDOM, a virtual DOM.
+
+=>  We have LiveServer in the React
+
+=> returning some element in App.js and I import that into index.js and utilise it.
+    Instead, directly rendering the element in root.render in index.js instead of getting it from App.
+    So we can write anything inside that root.render in index.js
+    But we shall write in return of App and pass that App component into index.js.
+    and pass App component in root.render
+
+
+<!-- JSX => JAVASCRIPT AND XML -->
+    Inside the App component , we write jscript inside a function and use the same(dynamic inputs) in Html that is written there itself(inside return) using curly braces.
+
+<!-- Babel -->
+    its like a pre-processor that converts jsx into js objects.
+
+
+<!-- Simple summary -->
+how the react applctn is going to render into the virtual DOM.
+
+index.html ----contains root element
+index.js -------we get that element inside index.js and 
+                makes it as root element to the virtual DOM and attaches Appcomponent to it as a simple HTML tag.
+                Component name starts with upper-case
+app.js--------inside app component we write JSX and export it into index.js
+
+
+<!-- Components and its types -->
+=> Class Component
+=> Functional Component
+
+        Before, 16.8 there are no functional components, only class based are used.
+         
+ <!-- Class-based Components      -->
+         class App extends React.Component {
+            render() {
+                return <h1>Hello React !!!</h1>
+        }
+      }
+
+class component contains render method that means it renders into parent i.e., index.js again 
+there it contains render method ,it renders it into virtual DOM/UI.
+
+<!-- Functional-based Components -->
+        function App{
+            const firstName='tarun';
+            return <div classname="App">{firstName}</div>
+        }
+
+=> if we want to use the this keyword in the component there should be props inside the parent component.
+<!-- props -->
+it is to share the data from parent component to child component.
+
+<!-- constructor and super -->
+constructor(props)
+super();
+log(this.props);
+
+
+---undefined---
+-------------------------------------------------------------------
+constructor(props)
+super(props) [used to get values of parent]
+log(this.props);
+
+---object----[parent one]
+--------------------------------------------------------------------
+constructor(props)
+super();
+log(props);
+
+----object----[parent one]
+----------------------------------------------------------------------
+
+<!-- PROPS -->
+    => immutable object  [data cannot be changed]
+<!-- use -->
+    to pass the data from parent to child component.[one-way binding]
+    index.js to app.js
+
+    When props changes, the app re-renders.[so,immutable,else,rerenders runs in a loop.]
+    when props comes into child,child re-renders.
+
+<!-- Renders -->
+    to get JSX elements into UI.
+
+<!-- <index.js> -->
+    root.render(<App name="tarun"/>)
+    send any kind of data,not only strings.
+
+
+    for numbers:{age:"20"}
+    for address:{{hno:"25",city:"hyd", state:"TS"}}

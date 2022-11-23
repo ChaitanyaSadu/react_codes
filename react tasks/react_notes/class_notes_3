@@ -1,0 +1,92 @@
+Props:
+    => its an immuatble Object.
+    => it inherits properties from parent to child.
+===================================================================================================================
+State:
+    => its an mutable Object.
+    => it is used to maintain data for a particular Component.
+===================================================================================================================
+Basic Program using Class-based-component:
+-------------------------------------------
+=> class extends Component{
+
+    <!-- constructor(){
+        super() -->
+        this.state={
+
+        }
+    }
+}
+====================================================================================================================
+=> We write functions with logics outside render method [we can write inside html elements also]
+=> ****Here Everything this,state,functions we write all exists inside this object.
+=> ****If we write in normal functions ,that needs to be done by using bind method, else 
+    When we write inside arrow Function , it automatically comes inside this.
+Example- 
+------------
+        class Foo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log('Click happened');
+  }
+  render() {
+    return <button onClick={this.handleClick}>Click Me</button>;
+  }
+}
+======================================================================================================================
+
+=> it gives synthetic event that is a object, can access type=click and target=button by e.target/e.type
+
+ handleInc= (e)=> {
+        console.log("inc",e);
+    }
+========================================================================================================================
+=>this.setstate method:
+-----------------------
+    => Even though not declared, it can be used. because by extends components,we are inheriting that method from parent.
+    => setstate is going to change the initial state.
+        here now, from [] to data given (count+1)
+    ****When both state and props changes, it re-renders.
+    ****When there are multiple state updates in a single event,still it gonna rerender only once.
+        all the setstate's under a function get into a batch and its gonna take as a one.
+    => UPDATE THE STATE===using the SETSTATE.
+==========================================================================================================================
+LIFE CYCLE
+=========================================================================================================================
+MOUNTING PHASE-
+---------------
+When component is given before to the virtual DOM, it undergoes these methods
+    1.Constructor-
+    2.getDerivedStateFromProps
+    3.Render
+    4.ComponentDidMount
+
+use of constructor:
+-------------------
+=> To initialise the state variable,we use constructor.
+=> we call the super method.
+=> we bind the function inside the constructor.
+
+    When component is created all the initialisations and declarations has to be done ,so in mounting phase constructor is gonna called first.
+    therefore, all those are placed inside constructor.
+
+getDerivedsatefromprops:
+-------------------------
+    =>its a static method.
+    => directly whatever data is coming from props we can set it into state.
+        so that we can bypass state changes , because it rerenders if it gets changed.
+render:
+-------
+to render JSX elements into UI.
+
+componentdidmount:
+----------------
+    =>to make API calls.
+    =>after rendering,componentdidmount is going to call only once.[in entire life-cycle]
+    =>we cannot do api calls inside render,bcoz whenever the changes happens rerenders and api calls get into infinity loops
+======================================================================================================================
+    =>  inside jsx, if we want to use javascript,write it in {}barces.
+    =>  i.e.,javascript inside html,write it in {}braces.

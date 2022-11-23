@@ -1,0 +1,66 @@
+
+<!-- Intro -->
+React developed and maintained by facebook.
+Current version- 18.2
+React->Javascript Library
+
+<!-- Breaking Changes in React- -->
+=>before 16.8, approaches are different for building components.
+=>after 16.8, multiple approaches to build react components.
+
+<!-- Client-side Rendering -->
+DOM tree formed in browser.
+<!-- server-side rendering -->
+DOM tree formed in server and given to browser.
+
+<!-- CRA -->
+how to create a react application from scratch.
+
+<!-- CRA-command -->
+npx create-react-app application_name(lowercase)
+
+-> it automatically downloads some dependencies and folder structure for the app.
+
+<!-- difference bwn npx and npm -->
+
+<!-- node package manager --> 
+contains packages and dependencies
+command--->npm install (package_name) || npm i package_name
+ or (dependencies name)
+
+ <!-- for specific versions: -->
+ npm i name@version
+
+
+<!-- other approach to create reactapp -->
+by linking cdn links to script tag.
+
+<!-- cons-> -->
+when application is loaded,the entire package library data is going to download into the browser.
+
+but if we install npm i package, it is going to take already running package somewhere and gives reference to us,not download. 
+
+
+
+<!-- folder created contains subfolders -->
+any dependencies installed commes into node-modules folder.
+package.json-dependencies are present,when cra are created
+
+node modules are required when apllication to be run in local,but when we want to run application in server node_modules are not needed.
+
+
+<!-- <scripts> -->
+start:  npm start == to start react app
+build:  after application is created,when it is to be given to user.
+        application need to be build using npm run build command and deploy it in server/production.
+        it creates new build folder.
+test:   to check components running perfectly,we write test cases.
+        npm run test-->tests the test cases.
+eject:  ejects all configured things before
+        modifies the dependencies present compared to before.
+        once ejected ,cra doesnot come back into normal mode,again configured scripts cannot come back.
+        cra will be in ejected mode only.
+
+
+<!-- DEFAULT PORT:  -->
+        react inbuilt creates port that can be changed.

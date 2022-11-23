@@ -1,0 +1,45 @@
+<!-- This first method is not a popular way to set up React 
+    and is not how we'll be doing the rest of our tutorial, 
+    but it will be familiar and easy to understand if you've ever used a library like jQuery,
+    and it's the least scary way to get started if you're not familiar with Webpack, Babel, and Node.js. -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+    <!-- load in three CDNs in the head - React, React DOM, and Babel -->
+    <!-- loading in the latest stable versions of the libraries
+    React - the React top level API
+    React DOM - adds DOM-specific methods
+    Babel - a JavaScript compiler that lets us use ES6+ in old browsers -->
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <!-- entry point for our app will be the root div element,  -->
+    <div id="root"></div>
+    <!-- text/babel script type, which is mandatory for using Babel. -->
+    <script type="text/babel">
+        //  going to use ES6 classes to create a React component called App.
+      class App extends React.Component {
+        // we'll add the render() method, the only required method in a class component,
+        // which is used to render DOM nodes.
+        render() {
+            // Inside the return, we're going to put what looks like a simple HTML element. 
+            // Note that we're not returning a string here, so don't use quotes around the element.
+            // This is called JSX, 
+          return <h1>Hello React !!!</h1>
+        }
+      }
+    //   going to use the React DOM render() method to render the App class we created into the root div in our HTML.
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+  </body>
+</html>
