@@ -1,0 +1,20 @@
+#Main-Ui{
+    display: grid;
+        grid-template-columns: auto auto auto auto;
+background-color: white;
+}
+
+.sub-Ui{
+
+gap: 50px;
+border:2px solid white;
+gap:10px;
+box-shadow: (0deg 0% 0% / 0.25);
+}
+
+.btn_Click{
+background-color:beige;
+}
+#image{
+background-color: white;
+}
