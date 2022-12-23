@@ -1,0 +1,63 @@
+.add_btn {
+  /* margin-left: 1000px; */
+  position: absolute;
+  top: 3em;
+  right: 5em;
+}
+.header {
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+/* .body {
+  background-color: bisque;
+} */
+.root {
+  /* background-color:#e6ffe6; */
+  background-image: url("./employee.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 650px;
+}
+
+.table {
+  width: 95%;
+  border-collapse: collapse;
+  padding: 35px;
+  text-align: left;
+  background-color: #ebebe0;
+  /* opacity: 0.7; */
+  position: absolute;
+  top: 12em;
+  left: 2em;
+
+  font-weight: 500;
+}
+.edit_popup {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+#root {
+  position: relative;
+}
+
+#edit_popup_bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.384);
+}
+#edit_popup_card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(235, 240, 221, 0.788);
+  padding: 40px;
+  width: 30%;
+}
