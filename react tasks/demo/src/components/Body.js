@@ -7,3 +7,4 @@ export default function Body() {
         <img src={buddha} alt="wrong" height={"550px"} width={"1350px"}/>
     </div>)
 }
+////////////testing
